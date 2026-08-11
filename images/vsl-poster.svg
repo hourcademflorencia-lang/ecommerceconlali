@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Video de Lali - próximamente">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#610C27"/>
+      <stop offset="1" stop-color="#1F4A4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="640" cy="360" r="72" fill="#F8F4ED" opacity="0.95"/>
+  <path d="M620 328 L620 392 L676 360 Z" fill="#610C27"/>
+  <text x="640" y="480" text-anchor="middle" fill="#F8F4ED" font-family="Georgia, serif" font-size="34" letter-spacing="4" opacity="0.9">ECOMMERCE CON LALI</text>
+</svg>
