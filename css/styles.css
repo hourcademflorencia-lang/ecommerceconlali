@@ -269,27 +269,14 @@ a { text-decoration: none; color: inherit; }
 
 .dreamlife {
   display: grid;
-  gap: 14px;
+  gap: 10px;
   grid-template-columns: 1fr;
-  margin-top: 28px;
+  margin-top: 30px;
 }
-.dreamlife__item { margin: 0; }
-.dreamlife__img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  background:
-    radial-gradient(80% 60% at 50% 20%, rgba(248,244,237,0.28), transparent);
-}
-.dreamlife__img--1 { background-image: linear-gradient(155deg, var(--bordo), var(--taupe)); }
-.dreamlife__img--2 { background-image: linear-gradient(155deg, var(--verde-petroleo), var(--taupe)); }
-.dreamlife__img--3 { background-image: linear-gradient(155deg, var(--taupe), var(--bordo)); }
-.dreamlife__caption {
-  margin-top: 10px;
+.dreamlife__line {
   font-family: var(--font-display);
   text-transform: uppercase;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   letter-spacing: 0.02em;
   color: var(--bordo);
   text-align: center;
@@ -716,7 +703,7 @@ a { text-decoration: none; color: inherit; }
   }
   .transform__item:last-child { grid-column: 1 / -1; }
 
-  .dreamlife { grid-template-columns: repeat(3, 1fr); }
+  .dreamlife { grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
   .method__grid { grid-template-columns: repeat(2, 1fr); }
 
