@@ -227,22 +227,45 @@ a { text-decoration: none; color: inherit; }
 .transform { background: var(--crema-soft); }
 .transform__list {
   display: grid;
-  gap: 14px;
+  gap: 16px;
   margin-top: 34px;
 }
 .transform__item {
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
+  gap: 16px;
+  align-items: center;
   background: var(--white);
-  border: 1px solid rgba(172, 156, 141, 0.28);
+  border: 1px solid rgba(172, 156, 141, 0.22);
+  border-left: 4px solid var(--taupe);
   border-radius: var(--radius-sm);
-  padding: 18px 20px;
+  padding: 20px 22px;
   font-size: 1.02rem;
   box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+.transform__item:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.transform__item:nth-child(4n+1) { border-left-color: var(--bordo); }
+.transform__item:nth-child(4n+2) { border-left-color: var(--verde-petroleo); }
+.transform__item:nth-child(4n+3) { border-left-color: var(--taupe); }
+.transform__item:nth-child(4n+4) { border-left-color: var(--bordo); }
 .transform__item strong { color: var(--bordo); font-weight: 600; }
-.transform__emoji { font-size: 1.4rem; line-height: 1.2; flex-shrink: 0; }
+.transform__emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(97, 12, 39, 0.07);
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+.transform__item:nth-child(4n+1) .transform__emoji { background: rgba(97, 12, 39, 0.09); }
+.transform__item:nth-child(4n+2) .transform__emoji { background: rgba(31, 74, 77, 0.1); }
+.transform__item:nth-child(4n+3) .transform__emoji { background: rgba(172, 156, 141, 0.22); }
+.transform__item:nth-child(4n+4) .transform__emoji { background: rgba(97, 12, 39, 0.09); }
+.transform__text { flex: 1; min-width: 0; }
 
 /* ============================================================
    MÉTODO LALI
