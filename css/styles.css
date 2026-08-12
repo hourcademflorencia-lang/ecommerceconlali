@@ -328,7 +328,7 @@ a { text-decoration: none; color: inherit; }
   text-transform: uppercase;
   font-size: 1.15rem;
   letter-spacing: 0.02em;
-  color: var(--bordo);
+  color: var(--crema);
   text-align: center;
 }
 
@@ -697,10 +697,9 @@ a { text-decoration: none; color: inherit; }
 .closing__title {
   font-family: var(--font-display);
   text-transform: uppercase;
-  font-size: clamp(2rem, 8vw, 3.4rem);
-  max-width: 24ch;
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  max-width: none;
   margin-inline: auto;
-  text-wrap: balance;
   margin-bottom: 18px;
 }
 .closing__text {
