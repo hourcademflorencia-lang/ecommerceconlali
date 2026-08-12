@@ -73,6 +73,29 @@ a { text-decoration: none; color: inherit; }
   padding-block: 64px;
 }
 
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 260px;
+  margin: 44px auto 0;
+  color: var(--taupe);
+}
+.divider__line {
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+}
+.divider__mark {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  color: var(--bordo);
+}
+.divider--light { color: rgba(248, 244, 237, 0.5); }
+.divider--light .divider__mark { color: var(--crema); }
+
 .eyebrow {
   display: inline-block;
   font-size: 0.72rem;
@@ -617,7 +640,7 @@ a { text-decoration: none; color: inherit; }
   justify-content: center;
   margin-top: 40px;
 }
-.pricing__single .plan { max-width: 460px; width: 100%; }
+.pricing__single .plan { max-width: 520px; width: 100%; }
 
 .plan__installments {
   font-size: 0.95rem;
@@ -679,9 +702,14 @@ a { text-decoration: none; color: inherit; }
   flex-grow: 1;
 }
 .plan__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   font-size: 0.98rem;
-  line-height: 1.4;
+  line-height: 1.45;
 }
+.plan__icon { flex-shrink: 0; font-size: 1.05em; line-height: 1.45; }
+.plan__feat-text { flex: 1; min-width: 0; }
 
 /* ============================================================
    CIERRE
@@ -822,3 +850,10 @@ a { text-decoration: none; color: inherit; }
     font-size: 1.15rem;
   }
 }
+
+/* ============================================================
+   SECTION SPACING MODIFIERS — placed last to win over media-query
+   padding-block resets at any breakpoint
+   ============================================================ */
+.section--tight-bottom { padding-bottom: 28px !important; }
+.section--tight-top { padding-top: 28px !important; }
