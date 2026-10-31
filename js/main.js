@@ -49,4 +49,28 @@
       vslBadge.style.display = 'none';
     });
   }
+
+  /* ---------- Barra fija de botón (celular) ---------- */
+  var sticky = document.getElementById('sticky-cta');
+  var heroCta = document.getElementById('hero-cta');
+  var offerEl = document.getElementById('opciones');
+  var closingEl = document.getElementById('cierre');
+  if (sticky && heroCta && 'IntersectionObserver' in window) {
+    var state = { hero: true, offer: false, closing: false };
+    var update = function () {
+      var on = !state.hero && !state.offer && !state.closing;
+      sticky.classList.toggle('is-on', on);
+      sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+    };
+    var watch = function (el, key) {
+      if (!el) return;
+      new IntersectionObserver(function (entries) {
+        state[key] = entries[0].isIntersecting;
+        update();
+      }, { threshold: 0.05 }).observe(el);
+    };
+    watch(heroCta, 'hero');
+    watch(offerEl, 'offer');
+    watch(closingEl, 'closing');
+  }
 })();
