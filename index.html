@@ -64,19 +64,16 @@
         <li class="chip chip--taupe">Comunidad en Skool</li>
       </ul>
 
-      <!-- VSL: oculto por ahora hasta tener el video real de Lali.
-           Para mostrarlo de nuevo, quitar el atributo hidden del div. -->
-      <div class="vsl reveal" hidden>
-        <video
-          class="vsl__video"
-          controls
-          preload="none"
-          poster="/images/vsl-poster.svg"
-        >
-          <!-- <source src="/videos/vsl-lali.mp4" type="video/mp4" /> -->
-          Tu navegador no soporta el video.
-        </video>
-        <div class="vsl__badge">▶ Mirá el video</div>
+      <!-- VSL: video de YouTube (no listado). Para cambiarlo, reemplazar el ID av9vDUlDBWA por el del nuevo video. -->
+      <div class="vsl reveal">
+        <iframe
+          class="vsl__frame"
+          src="https://www.youtube-nocookie.com/embed/av9vDUlDBWA?rel=0&modestbranding=1&playsinline=1"
+          title="Ecommerce con Lali: mirá el video"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
 
       <a
