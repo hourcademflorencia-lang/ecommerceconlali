@@ -431,3 +431,58 @@ a { text-decoration: none; color: inherit; }
   .hero__title { max-width: none; font-size: clamp(2.8rem, 4.6vw, 4rem); }
   .hero__break { display: block; }
 }
+
+/* ============================================================
+   AJUSTES — énfasis tipográfico, ilustración, bonus
+   ============================================================ */
+.t-soft { font-weight: 500; color: #9a6577; }
+.t-key { font-weight: 800; color: var(--bordo); }
+.t-key--xl { font-weight: 800; }
+.hero__title { font-weight: 800; }
+.hero__sub strong { font-weight: 700; color: var(--bordo); }
+.hero__trust strong { font-weight: 700; color: var(--bordo); }
+.section__title .k { color: var(--ink); font-weight: 800; }
+
+@media (min-width: 1024px) {
+  .hero__title { max-width: none; font-size: clamp(2.6rem, 4.4vw, 3.9rem); }
+  .hero__sub { max-width: none; white-space: nowrap; font-size: 1.1rem; }
+}
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .hero__sub { white-space: normal; max-width: 52ch; }
+}
+
+/* Ilustración del ecosistema */
+.eco { max-width: 640px; margin: 28px auto 0; }
+.eco__svg { width: 100%; height: auto; display: block; }
+.eco__legend { display: grid; gap: 10px; margin-top: 24px; }
+.eco__legend li {
+  display: flex; flex-direction: column; gap: 2px; text-align: center;
+  background: var(--white); border-radius: var(--radius-sm); padding: 14px 16px;
+  border: 1px solid rgba(172, 156, 141, 0.28);
+}
+.eco__legend strong { color: var(--bordo); font-weight: 700; }
+.eco__legend span { font-size: .95rem; }
+@media (min-width: 768px) { .eco__legend { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+
+/* Acordeón: badge de métodos y bonus */
+.acc__badge {
+  margin: 0 18px 14px 54px;
+  display: inline-block;
+  font-size: .82rem; font-weight: 600; color: var(--bordo);
+  background: var(--pink-2); padding: 7px 14px; border-radius: 12px;
+}
+.acc__item--bonus { background: var(--pink-2); border-color: var(--bordo); }
+.inside .acc__item--bonus .acc__sum::after { background: var(--white); }
+.inside .acc__item--bonus[open] .acc__sum::after { background: var(--bordo); }
+
+/* Resultados */
+.result__big--sm { font-size: clamp(1.7rem, 7.4vw, 2.3rem); white-space: nowrap; }
+.results__note { text-align: center; margin-top: 16px; font-size: .85rem; color: #8a6a73; }
+
+/* Resultados: columnas parejas */
+.results { grid-template-columns: 1fr; }
+@media (min-width: 768px) {
+  .results { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .result__big, .result__big--sm { font-size: clamp(1.5rem, 2.7vw, 2.1rem); }
+  .result__big--sm { white-space: nowrap; }
+}
