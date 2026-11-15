@@ -724,3 +724,22 @@ a { text-decoration: none; color: inherit; }
 }
 .btn .em { margin-left: .4em; }
 @media (max-width: 480px) { .plan--vip .plan__cta .btn { font-size: .95rem; padding: 17px 12px; white-space: nowrap; } }
+
+/* ============================================================
+   AJUSTES v8 — ilustraciones "es / no es para vos"
+   ============================================================ */
+.fit__svg { display: block; width: 100%; max-width: 230px; height: auto; margin: -6px auto 12px; }
+.fit__svg * { transform-box: fill-box; }
+.fit__col { text-align: left; }
+.a-shake { animation: shake 1.1s ease-in-out infinite; transform-origin: 50% 100%; }
+.a-drop  { animation: drip 1.8s ease-in infinite; }
+.a-clock { animation: wobble .7s ease-in-out infinite; transform-origin: 50% 50%; }
+.a-float { animation: floatup 3.6s ease-in-out infinite; }
+.a-f2 { animation-delay: -1.8s; }
+.a-zig { animation: tw 1.2s ease-in-out infinite; }
+@keyframes shake  { 0%,100% { transform: translateX(0) rotate(0); } 25% { transform: translateX(-2px) rotate(-1deg); } 75% { transform: translateX(2px) rotate(1deg); } }
+@keyframes drip   { 0% { transform: translateY(-4px); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(26px); opacity: 0; } }
+@keyframes wobble { 0%,100% { transform: rotate(-9deg); } 50% { transform: rotate(9deg); } }
+@keyframes floatup { 0%,100% { transform: translateY(4px); opacity: .6; } 50% { transform: translateY(-10px); opacity: 1; } }
+.fit__col--no .fit__svg { filter: saturate(.85); }
+@media (prefers-reduced-motion: reduce) { .a-shake, .a-drop, .a-clock, .a-float, .a-zig, .fit__svg .a-twinkle, .fit__svg .a-pill { animation: none !important; } }
