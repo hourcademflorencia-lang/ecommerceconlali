@@ -1136,3 +1136,190 @@ body { padding-bottom: 0; }
 }
 
 .vsl__frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ============================================================
+   ACTUALIZACIÓN SKOOL — pilares, tu caso, Claude, cursos
+   ============================================================ */
+
+/* ---- Sistema: 3 pilares (fondo verde petróleo) ---- */
+.system { background: var(--verde-petroleo); color: var(--crema); }
+.system .eyebrow { color: var(--crema); background: rgba(248, 244, 237, 0.14); }
+.system .section__title { color: var(--crema); }
+.system .section__lead { color: rgba(248, 244, 237, 0.85); }
+
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  align-items: center;
+  margin-top: 36px;
+}
+.pillar {
+  background: var(--crema);
+  color: var(--ink);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+.pillar__emoji { display: block; font-size: 1.8rem; margin-bottom: 8px; }
+.pillar__name {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 1.35rem;
+  color: var(--bordo);
+  margin-bottom: 2px;
+}
+.pillar__tag {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--verde-petroleo);
+  margin-bottom: 8px;
+}
+.pillar__text { font-size: 1rem; color: var(--ink); }
+.pillar__plus {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--taupe);
+}
+.pillars__result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 14px;
+}
+.pillars__eq { font-family: var(--font-display); font-size: 1.8rem; color: var(--taupe); line-height: 1; }
+.pillars__goal {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 7vw, 2.4rem);
+  background: var(--bordo);
+  color: var(--crema);
+  padding: 12px 28px;
+  border-radius: 999px;
+}
+.system__note { text-align: center; margin-top: 22px; color: rgba(248, 244, 237, 0.85); font-size: 1rem; }
+
+/* ---- Hecho para tu caso ---- */
+.yourcase { background: var(--crema-soft); }
+.profiles { display: grid; gap: 14px; margin-top: 34px; }
+.profile {
+  background: var(--white);
+  border: 1px solid rgba(172, 156, 141, 0.35);
+  border-left: 4px solid var(--bordo);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+  box-shadow: var(--shadow-soft);
+}
+.profile--b { border-left-color: var(--verde-petroleo); }
+.profile__tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 6px;
+}
+.profile__title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  color: var(--bordo);
+  margin-bottom: 8px;
+}
+.profile__goal { font-size: 0.95rem; font-weight: 600; color: var(--verde-petroleo); }
+
+.route { display: grid; gap: 18px; margin-top: 34px; list-style: none; padding: 0; }
+.route__item { display: flex; gap: 16px; align-items: flex-start; }
+.route__num {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--bordo);
+  color: var(--crema);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.route__item:nth-child(2) .route__num { background: var(--verde-petroleo); }
+.route__item:nth-child(3) .route__num { background: var(--taupe); color: var(--ink); }
+.route__title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--bordo);
+  margin-bottom: 4px;
+}
+.route__text { color: var(--ink); font-size: 1rem; }
+.route__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; list-style: none; padding: 0; }
+.route__chips li {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(31, 74, 77, 0.1);
+  color: var(--verde-petroleo);
+}
+
+/* ---- Cursos (acordeón) ---- */
+.acc__item .acc__text + .acc__list { padding-top: 0; }
+.acc__item[open] .acc__text { padding-bottom: 12px; }
+.acc__item--bonus { border-color: var(--verde-petroleo); }
+.acc__item--bonus .acc__sum::after { background: rgba(31, 74, 77, 0.12); color: var(--verde-petroleo); }
+.acc__item--bonus[open] .acc__sum::after { background: var(--verde-petroleo); color: var(--crema); }
+.inside__tools-label {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+.chips--tools { margin-top: 12px; margin-bottom: 0; }
+
+/* ---- Claude en tu ecommerce ---- */
+.ai { background: var(--bordo); color: var(--crema); }
+.ai .eyebrow { color: var(--crema); background: rgba(248, 244, 237, 0.14); }
+.ai .section__title { color: var(--crema); }
+.ai .section__lead { color: rgba(248, 244, 237, 0.85); }
+.ai__grid { display: grid; gap: 14px; margin-top: 36px; }
+.ai__card {
+  background: rgba(248, 244, 237, 0.07);
+  border: 1px solid rgba(248, 244, 237, 0.18);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+}
+.ai__emoji { display: block; font-size: 1.7rem; margin-bottom: 8px; }
+.ai__title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  color: var(--crema);
+  margin-bottom: 6px;
+}
+.ai__text { font-size: 0.98rem; color: rgba(248, 244, 237, 0.88); }
+
+@media (min-width: 768px) {
+  .pillars { grid-template-columns: 1fr auto 1fr auto 1fr; gap: 12px; }
+  .pillars__result { flex-direction: row; justify-content: center; gap: 14px; }
+  .profiles { grid-template-columns: 1fr 1fr; }
+  .route { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .route__item { flex-direction: column; }
+  .ai__grid { grid-template-columns: repeat(2, 1fr); }
+  .ai__card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (min-width: 1024px) {
+  .ai__grid { grid-template-columns: repeat(3, 1fr); }
+  .ai__card:last-child:nth-child(odd) { grid-column: auto; }
+}
