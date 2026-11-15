@@ -603,3 +603,124 @@ a { text-decoration: none; color: inherit; }
   .t-shine { color: var(--bordo); -webkit-text-fill-color: var(--bordo); background: none; }
 }
 @media (max-width: 480px) { .hero .eyebrow { font-size: .68rem; letter-spacing: .06em; padding: 7px 12px; } }
+
+/* ============================================================
+   AJUSTES v7 — emojis con brillo, dibujo animado, tarjeta del programa, footer
+   ============================================================ */
+
+/* Emojis con destello */
+.em { display: inline-block; animation: emshine 3.6s ease-in-out infinite; transform-origin: 50% 60%; }
+.em1 { animation-delay: -.7s; } .em2 { animation-delay: -1.4s; } .em3 { animation-delay: -2.1s; } .em4 { animation-delay: -2.8s; }
+@keyframes emshine {
+  0%, 60%, 100% { transform: scale(1) rotate(0); filter: brightness(1) drop-shadow(0 0 0 rgba(255,214,230,0)); }
+  72% { transform: scale(1.22) rotate(-9deg); filter: brightness(1.2) drop-shadow(0 0 7px rgba(255,190,215,.95)); }
+  86% { transform: scale(1.08) rotate(7deg); filter: brightness(1.1) drop-shadow(0 0 4px rgba(255,190,215,.7)); }
+}
+
+/* Dibujo de los 3 pilares con movimiento */
+.eco__svg * { transform-box: fill-box; }
+.a-phone  { animation: bob 4.6s ease-in-out infinite; transform-origin: 50% 100%; }
+.a-badge  { animation: pop 2.4s ease-in-out infinite; transform-origin: 50% 50%; }
+.a-chat   { animation: bob 3.4s ease-in-out -1s infinite; }
+.a-target { animation: bob 5s ease-in-out -2s infinite; }
+.a-target circle:nth-child(2) { animation: ring 2.8s ease-in-out infinite; transform-origin: 50% 50%; }
+.a-target circle:nth-child(3) { animation: ring 2.8s ease-in-out -.5s infinite; transform-origin: 50% 50%; }
+.a-twinkle { animation: tw 2.6s ease-in-out infinite; transform-origin: 50% 50%; }
+.a-tw2 { animation-delay: -1.3s; }
+.a-flow { animation: flow 1.2s linear infinite; }
+.a-store { animation: bob 6s ease-in-out -.5s infinite; }
+.a-lock { animation: swing 3s ease-in-out infinite; transform-origin: 50% 0%; }
+.a-bar { transform-origin: 50% 100%; animation: grow 7s cubic-bezier(.3,1.4,.5,1) infinite; }
+.a-bar2 { animation-delay: .25s; } .a-bar3 { animation-delay: .5s; } .a-bar4 { animation-delay: .75s; } .a-bar5 { animation-delay: 1s; }
+.a-pill { animation: pop 2.4s ease-in-out -.8s infinite; transform-origin: 50% 50%; }
+@keyframes bob   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes pop   { 0%,100% { transform: scale(1); } 50% { transform: scale(1.14); } }
+@keyframes ring  { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes tw    { 0%,100% { opacity: .25; transform: scale(.7); } 50% { opacity: 1; transform: scale(1.3); } }
+@keyframes flow  { to { stroke-dashoffset: -24; } }
+@keyframes swing { 0%,100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
+@keyframes grow  { 0% { transform: scaleY(0); } 14%, 88% { transform: scaleY(1); } 100% { transform: scaleY(0); } }
+
+/* Tarjeta del programa — misma identidad: rosa, beige, bordo, brillo */
+.pricing { background: linear-gradient(180deg, var(--beige) 0%, var(--pink) 100%); position: relative; overflow: hidden; }
+.pricing::before, .pricing::after {
+  content: ''; position: absolute; border-radius: 50%; filter: blur(8px); pointer-events: none; opacity: .65;
+  background: radial-gradient(circle, rgba(248,213,221,.95), transparent 70%);
+}
+.pricing::before { width: 340px; height: 340px; top: -90px; left: -120px; }
+.pricing::after  { width: 300px; height: 300px; bottom: -80px; right: -100px; }
+.pricing .container { position: relative; z-index: 1; }
+
+.pricing__single .plan.plan--vip {
+  padding: 4px; border: 0; color: var(--ink);
+  border-radius: 34px;
+  background: conic-gradient(from var(--ang), #F8D5DD, #610C27, #F8D5DD, #fff, #F8D5DD);
+  animation: spinframe 8s linear infinite;
+  box-shadow: 0 30px 70px -26px rgba(97,12,39,.55), 0 0 0 8px rgba(255,255,255,.5);
+  overflow: visible;
+}
+.plan--vip.reveal { transform: translateY(26px) scale(.97); }
+.plan--vip.reveal.is-visible { transform: none; }
+.plan--vip .plan__head {
+  position: relative; overflow: hidden; text-align: center; color: var(--crema);
+  padding: 44px 24px 30px;
+  border-radius: 30px 30px 0 0;
+  background: radial-gradient(120% 90% at 50% 0%, #8c1c42 0%, #610C27 60%, #4a0a1e 100%);
+}
+.plan--vip .plan__head::before, .plan--vip .plan__head::after {
+  content: '✦'; position: absolute; color: #fff; text-shadow: 0 0 12px #ffc1d6; animation: twinkle 3s ease-in-out infinite;
+}
+.plan--vip .plan__head::before { top: 18px; left: 9%; font-size: 1.3rem; }
+.plan--vip .plan__head::after  { bottom: 22px; right: 8%; font-size: 1rem; animation-delay: -1.5s; }
+.plan--vip .plan__badge {
+  position: absolute; top: 14px; left: 50%; transform: translateX(-50%); white-space: nowrap;
+  background: linear-gradient(100deg, #F8D5DD, #fff, #F8D5DD); background-size: 200% 100%;
+  color: var(--bordo); font-weight: 700; font-size: .74rem; letter-spacing: .08em; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 999px; animation: badgesheen 3.5s linear infinite;
+}
+@keyframes badgesheen { to { background-position: -200% 0; } }
+.plan--vip .plan__name { font-family: var(--font-body); font-weight: 300; text-transform: none; font-size: 1.25rem; letter-spacing: 0; margin: 12px 0 6px; color: #f7c5d3; }
+.plan--vip .plan__price {
+  font-family: var(--font-display); font-size: clamp(3.8rem, 17vw, 5.2rem); line-height: 1; margin: 0 0 6px; color: #fff;
+  text-shadow: 0 4px 24px rgba(255,190,215,.45);
+}
+.plan--vip .plan__currency { font-family: var(--font-body); font-weight: 600; font-size: 1.1rem; vertical-align: top; opacity: .85; margin-right: 4px; position: relative; top: .5em; }
+.plan--vip .plan__installments { color: #f7c5d3; font-weight: 500; font-size: .98rem; margin: 0; }
+
+.plan--vip .plan__features {
+  background: var(--white); padding: 26px 22px 6px; margin: 0; gap: 10px;
+}
+.plan--vip .plan__features li {
+  align-items: center; gap: 12px; padding: 11px 14px; border-radius: 16px;
+  background: linear-gradient(90deg, var(--pink), rgba(252,232,236,.35)); font-weight: 500; font-size: .96rem;
+}
+.plan--vip .plan__icon {
+  flex: 0 0 38px; height: 38px; border-radius: 50%; background: #fff; display: grid; place-items: center;
+  font-size: 1.1rem; line-height: 1; box-shadow: 0 6px 12px -6px rgba(97,12,39,.4);
+}
+.plan--vip .plan__cta { background: var(--white); padding: 18px 22px 26px; border-radius: 0 0 30px 30px; }
+.plan--vip .plan__cta .btn {
+  width: 100%; background: var(--bordo); color: var(--crema); border: 0; font-size: 1.05rem; padding: 18px 20px;
+  box-shadow: 0 14px 28px -12px rgba(97,12,39,.65); position: relative; overflow: hidden;
+  animation: ctapulse 2.8s ease-in-out infinite;
+}
+.plan--vip .plan__cta .btn::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent);
+  transform: skewX(-20deg); animation: sweep 3.2s ease-in-out infinite;
+}
+.plan--vip .plan__cta .btn:hover { background: #4d0a1f; transform: translateY(-2px) scale(1.02); }
+@keyframes ctapulse { 0%,100% { box-shadow: 0 14px 28px -12px rgba(97,12,39,.65), 0 0 0 0 rgba(97,12,39,.3); } 50% { box-shadow: 0 14px 28px -12px rgba(97,12,39,.65), 0 0 0 9px rgba(97,12,39,0); } }
+
+/* Footer con Instagram */
+.footer__ig {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 8px 16px; border-radius: 999px;
+  background: rgba(248,213,221,.12); color: var(--pink-2); font-weight: 600; font-size: .95rem; transition: background .25s, transform .25s;
+}
+.footer__ig:hover { background: rgba(248,213,221,.25); transform: translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .em, .eco__svg *, .plan--vip, .plan--vip .plan__badge, .plan--vip .plan__cta .btn, .plan--vip .plan__cta .btn::after, .plan--vip .plan__head::before, .plan--vip .plan__head::after { animation: none !important; }
+}
+.btn .em { margin-left: .4em; }
+@media (max-width: 480px) { .plan--vip .plan__cta .btn { font-size: .95rem; padding: 17px 12px; white-space: nowrap; } }
