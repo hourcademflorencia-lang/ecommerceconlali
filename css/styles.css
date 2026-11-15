@@ -728,7 +728,7 @@ a { text-decoration: none; color: inherit; }
 /* ============================================================
    AJUSTES v8 — ilustraciones "es / no es para vos"
    ============================================================ */
-.fit__svg { display: block; width: 100%; max-width: 230px; height: auto; margin: -6px auto 12px; }
+.fit__svg { display: block; width: 100%; max-width: 184px; height: auto; margin: -6px auto 12px; }
 .fit__svg * { transform-box: fill-box; }
 .fit__col { text-align: left; }
 .a-shake { animation: shake 1.1s ease-in-out infinite; transform-origin: 50% 100%; }
