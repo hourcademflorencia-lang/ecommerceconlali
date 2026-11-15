@@ -486,3 +486,120 @@ a { text-decoration: none; color: inherit; }
   .result__big, .result__big--sm { font-size: clamp(1.5rem, 2.7vw, 2.1rem); }
   .result__big--sm { white-space: nowrap; }
 }
+
+/* ============================================================
+   AJUSTES v6 — título centrado, video animado, brillo, detalles cute
+   ============================================================ */
+
+/* Título: 2 líneas centradas, grosores mezclados */
+.hero__title {
+  max-width: none;
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-size: clamp(2.5rem, 11.5vw, 4.6rem);
+  margin-bottom: 18px;
+  text-wrap: initial;
+}
+.hero__line { display: block; white-space: nowrap; }
+.t-soft { font-weight: 300; color: #8a5266; }
+.t-key { font-weight: 800; color: var(--bordo); }
+.hero__sub { max-width: 40ch; }
+@media (min-width: 1024px) {
+  .hero__title { font-size: clamp(3.6rem, 6vw, 5.2rem); max-width: none; }
+  .hero__sub { max-width: none; white-space: nowrap; font-size: 1.1rem; }
+}
+@media (min-width: 1024px) and (max-width: 1180px) {
+  .hero__sub { white-space: normal; max-width: 52ch; }
+}
+
+/* Brillo que recorre el +10K */
+.t-shine {
+  background: linear-gradient(100deg, #610C27 30%, #c9577a 46%, #f7c5d3 50%, #c9577a 54%, #610C27 70%);
+  background-size: 250% 100%;
+  background-position: 120% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4.5s ease-in-out 1s infinite;
+}
+@keyframes shine {
+  0%   { background-position: 120% 0; }
+  55%, 100% { background-position: -20% 0; }
+}
+
+/* Video: marco con degradé que gira + entrada + destellos flotando */
+@property --ang { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+.vsl-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin-bottom: 28px;
+  padding: 4px;
+  border-radius: calc(var(--radius) + 4px);
+  background: conic-gradient(from var(--ang), #F8D5DD, #610C27, #F8D5DD, #fff, #F8D5DD);
+  animation: spinframe 7s linear infinite;
+  box-shadow: 0 18px 50px -18px rgba(97, 12, 39, .45), 0 0 0 6px rgba(248, 213, 221, .45);
+}
+.vsl-wrap.reveal { transform: translateY(26px) scale(.96); }
+.vsl-wrap.reveal.is-visible { transform: none; }
+@keyframes spinframe { to { --ang: 360deg; } }
+.vsl-wrap .vsl { margin-bottom: 0; box-shadow: none; border-radius: var(--radius); }
+
+.vsl-spark { position: absolute; z-index: 2; pointer-events: none; font-size: 1.5rem; animation: floaty 4s ease-in-out infinite; filter: drop-shadow(0 3px 6px rgba(97,12,39,.2)); }
+.vsl-spark--1 { top: -16px; left: -8px; }
+.vsl-spark--2 { top: -14px; right: 2%; font-size: 1.25rem; animation-delay: -1.2s; }
+.vsl-spark--3 { bottom: -16px; left: 6%; font-size: 1.3rem; animation-delay: -2.2s; }
+.vsl-spark--4 { bottom: -18px; right: -6px; font-size: 1.7rem; animation-delay: -3s; }
+@keyframes floaty { 0%,100% { transform: translateY(0) rotate(-6deg) scale(1); } 50% { transform: translateY(-8px) rotate(8deg) scale(1.12); } }
+
+/* Destellos de fondo en el hero */
+.hero { position: relative; overflow: hidden; }
+.hero::before, .hero::after {
+  content: '✦'; position: absolute; color: #fff; opacity: .9; pointer-events: none;
+  text-shadow: 0 0 14px rgba(255,255,255,.9), 0 0 4px #f4a6bb;
+  animation: twinkle 3.2s ease-in-out infinite;
+}
+.hero::before { top: 7%; left: 8%; font-size: 1.6rem; }
+.hero::after  { top: 30%; right: 7%; font-size: 1.1rem; animation-delay: -1.4s; }
+@keyframes twinkle { 0%,100% { opacity: .25; transform: scale(.7) rotate(0); } 50% { opacity: 1; transform: scale(1.15) rotate(25deg); } }
+
+/* Brillo que cruza el botón principal */
+.btn--primary { position: relative; overflow: hidden; }
+.btn--primary::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.4), transparent);
+  transform: skewX(-20deg); animation: sweep 4s ease-in-out 1.5s infinite; pointer-events: none;
+}
+@keyframes sweep { 0% { left: -60%; } 40%, 100% { left: 130%; } }
+
+/* Dibujo del ecosistema más chico */
+.eco { max-width: 400px; margin-top: 18px; }
+
+/* "¿Y si creás…?" integrado en la sección del sistema */
+.system .dream { background: none; margin-top: 44px; padding-top: 38px; border-top: 1px dashed rgba(97, 12, 39, .25); position: relative; }
+.system .dream::before {
+  content: '✦ ✦ ✦'; position: absolute; top: -.8em; left: 50%; transform: translateX(-50%);
+  background: var(--beige); padding: 0 14px; color: #d98aa3; letter-spacing: .5em; font-size: .8rem;
+}
+.system .dream .pills { margin-top: 18px; }
+.system .dream .dream__list { margin-top: 20px; gap: 10px; }
+.system .dream__item { padding: 13px 16px; font-size: .96rem; }
+
+/* Detalles con identidad */
+.step__num, .dream__emoji, .acc__emoji { box-shadow: 0 6px 14px -6px rgba(97,12,39,.35); }
+.eyebrow { box-shadow: 0 0 0 3px rgba(255,255,255,.55); }
+.section__title::after {
+  content: ''; display: block; width: 54px; height: 6px; margin: 14px auto 0; border-radius: 99px;
+  background: radial-gradient(circle, #f4a6bb 2.5px, transparent 3px) 0 50%/18px 6px repeat-x;
+}
+.section__title:not(.section__title--center)::after { margin-left: 0; }
+.plan, .step, .acc__item { transition: transform .3s ease, box-shadow .3s ease; }
+.step:hover, .acc__item:hover { transform: translateY(-3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .t-shine, .vsl-wrap, .vsl-spark, .hero::before, .hero::after, .btn--primary::after { animation: none !important; }
+  .t-shine { color: var(--bordo); -webkit-text-fill-color: var(--bordo); background: none; }
+}
+@media (max-width: 480px) { .hero .eyebrow { font-size: .68rem; letter-spacing: .06em; padding: 7px 12px; } }
